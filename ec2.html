@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AWS EC2 Animation</title>
+<style>
+    body {
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    .ec2-card {
+        background: linear-gradient(135deg, #ff9900, #ffb84d);
+        width: 260px;
+        height: 180px;
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(255,153,0,0.4);
+        padding: 20px;
+        color: #1f2937;
+        position: relative;
+        overflow: hidden;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .ec2-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .ec2-subtitle {
+        font-size: 14px;
+        opacity: 0.85;
+    }
+
+    .server {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        height: 60px;
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .server-line {
+        height: 6px;
+        background: #ff9900;
+        border-radius: 4px;
+        margin: 6px 0;
+        animation: blink 1.5s infinite alternate;
+    }
+
+    .pulse {
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        border: 2px solid rgba(255,255,255,0.7);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes blink {
+        from { opacity: 0.3; }
+        to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.6;
+        }
+        100% {
+            transform: scale(1.05);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="ec2-card">
+    <div class="pulse"></div>
+    <div class="ec2-title">AWS EC2</div>
+    <div class="ec2-subtitle">Elastic Compute Cloud</div>
+
+    <div class="server">
+        <div class="server-line"></div>
+        <div class="server-line"></div>
+        <div class="server-line"></div>
+    </div>
+</div>
+
+</body>
+</html>
